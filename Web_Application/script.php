@@ -3,7 +3,7 @@ if(isset($_POST['url1']))
 {
 $url = $_POST['url1'];
 $img = file_get_contents($url);
-$file = fopen("C:\\xampp\\htdocs\\php\\Web_Application\\captures\\IMG.jpg", "w");
+$file = fopen("captures\\IMG.jpg", "w");
 fwrite($file, $img);
 fclose($file);
 
