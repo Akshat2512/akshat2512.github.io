@@ -14,7 +14,7 @@ die;
 }
 if(isset($_POST['url2']))
 {   
-    $dlt=$_POST['url2'];
+    $dlt="C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json";
     unlink($dlt);
     die;
 }
