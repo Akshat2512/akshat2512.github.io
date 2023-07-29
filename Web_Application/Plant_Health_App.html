@@ -160,9 +160,9 @@
                  function myFunction(){
                     sp.innerHTML="Receiving data from the server....";
                    clearInterval(ch_int);
-                  
+                   var url="https://192.168.218.26/php/Web_Application/info.json";
                      $.ajax({
-                   url: 'https://192.168.218.26/php/Web_Application/info.json',
+                   url: url,
                    dataType: "json",
                    success: function(data) {
                 // Create a table element.
