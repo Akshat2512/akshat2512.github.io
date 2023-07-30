@@ -157,7 +157,7 @@
                 var s_url='https://192.168.218.26/php/Web_Application/script.php';
                 
                  $.post(s_url, { url1: dataURL },myFunction);// saving image to the folder
-                 $.post(s_url, {url2: j_url}, function(){} );
+                 $.post(s_url, {url2: 'C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json'}, function(){} );
                  
                  function myFunction(){
                     sp.innerHTML="Receiving data from the server....";
