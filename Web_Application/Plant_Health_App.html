@@ -78,7 +78,8 @@
    
     <script>
         
-        
+        const Domain = "https://5d59-2409-4055-4e15-f326-915-3a51-1067-4c57.ngrok-free.app/php/Web_Application/";
+        //const Domain = "https://192.168.218.26/php/Web_Application/temp/";
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) 
         { document.getElementById("video").innerHTML="<video height='1000' width='700'> </video>";}       
@@ -153,8 +154,8 @@
                 const dataURL = canvas.toDataURL("image/jpg");
                 var ch_int='';
                 var bar=0;
-                var j_url='https://192.168.218.26/php/Web_Application/temp/info.json';
-                var s_url='https://192.168.218.26/php/Web_Application/script.php';
+                var j_url = Domain+'temp/info.json';
+                var s_url = Domain+'script.php';
 
                  $.post(s_url, {url2: 'C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json'}, function(){} );//for deleting info.json file
                  $.post(s_url, {url1: dataURL },myFunction);// saving image to the folder
