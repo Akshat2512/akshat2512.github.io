@@ -178,7 +178,7 @@
                    $.each(data, function (index, value){ row.append("<td><span>"+value+"</span></td>"); });
                    table.append(row);
                    table.append("</tr></table>");
-                   table2.append("table");
+                   table2.append(table);
                    $("#t").html(table2);
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
