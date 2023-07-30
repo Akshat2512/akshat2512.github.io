@@ -168,9 +168,8 @@
                      $.ajax({
                    url: j_url,
                    dataType: "json",
-                   headers: {"ngrok-skip-browser-warning":"any", 'Access-Control-Allow-Origin': '*',
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Methods': 'POST' },
+                   headers: {"ngrok-skip-browser-warning":"any", "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json"},
                    success: function(data) {
                 // Create a table element.
                    document.getElementById("bar").style.opacity='0%';
