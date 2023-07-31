@@ -165,6 +165,8 @@
                      $.ajax({
                    url: j_url,
                    dataType: "json",
+                   headers: new Headers({"ngrok-skip-browser-warning": "69420"}),
+                
     
                    success: function(data) {
                 // Create a table element.
