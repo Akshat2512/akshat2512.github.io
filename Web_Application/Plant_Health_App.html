@@ -140,7 +140,7 @@
             });
             console.log('10');
                 }
-                
+
         var scroll=setInterval(scrolltoBottom(),1000);
     function capture()
         {       
@@ -190,7 +190,7 @@
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-                   setTimeout(clearInterval(scroll),10000);
+                   clearInterval(scroll);
               
                 }, error: function(){
                    
