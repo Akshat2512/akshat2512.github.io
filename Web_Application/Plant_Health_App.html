@@ -189,9 +189,11 @@
                    table.append("</tr></table>");
                    $("#t").html(table);
                    $("#img").attr('src',dataURL);
+                    $("#img").attr('width',width/1.5);
+                    $("#img").attr('height',height/1.5);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-                   setTimeout(() => {clearInterval(scro);},5000);
+                   setTimeout(() => {clearInterval(scro);},2000);
               
                 }, error: function(){
                    
