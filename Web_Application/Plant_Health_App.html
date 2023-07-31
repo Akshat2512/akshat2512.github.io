@@ -62,12 +62,10 @@
     <div id="video"> </div> 
     <div> <span id='cap'><Button type='button' onclick='capture()'>Capture</button></span> <br></div><span id='st'><button  type='button' onclick="stopCamera()">Stop</button></span> <span id='mode'><button type='button' onclick="sync()" disabled>Synchronous</button></span>
     <canvas id="c" hidden="hidden"> </canvas><br>
-   <pre>
-    <div id="container">
-        <marquee scrollamount="70" id="bar" direction="right" ><span id='span1'>_________________</span></marquee> 
-          <span id="span2"></span>
-    </div>
-   </pre>
+   <pre><div id="container">
+       <marquee scrollamount="70" id="bar" direction="right" >
+       <span id='span1'>_________________</span></marquee> 
+        <span id="span2"></span></div></pre>
     <div id="t"></div>
     
     </form>
@@ -189,7 +187,12 @@
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
+<<<<<<< HEAD
                    setTimeout(clearInterval(scroll),1000);
+=======
+                   setTimeout(clearInterval(scroll),5000);
+                   
+>>>>>>> 707d3099eaa18f559c8eb54605a081726612aa96
               
                 }, error: function(){
                    
