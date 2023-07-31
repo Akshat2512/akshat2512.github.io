@@ -5,6 +5,10 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
+
+      body{
+      height: 1200px;
+      }
       
         table,
         th,
@@ -56,9 +60,6 @@
 <body>
     <form  method='post'>
     <select id="cameraList"> </select><br><br>
-    <table>
-
-    </table>
     <div id="video"> </div> 
     <div> <span id='cap'><Button type='button' onclick='capture()'>Capture</button></span> <br></div><span id='st'><button  type='button' onclick="stopCamera()">Stop</button></span> <span id='mode'><button type='button' onclick="sync()" disabled>Synchronous</button></span>
     <canvas id="c" hidden="hidden"> </canvas><br>
@@ -99,18 +100,15 @@
     videoDevices.forEach(function(device) {
         camId.push(device.deviceId);
         camId.push(device.label);
-        if(!isMobile)
-         { document.getElementById("cameraList").innerHTML = "<option>"+device.label+"</option><br>";}
-    
+
     });
-    if(isMobile)
-    
-    {   for(let i = camId.length;i>0;i=i-2)
-        {
+  
+      for(let i = camId.length;i>0;i=i-2)
+        {   
             var x=document.getElementById("cameraList").innerHTML;
            document.getElementById("cameraList").innerHTML = x+"<option>"+camId[i-1]+"</option><br>";
         }
-    }
+
      startCamera();
       
     });
@@ -144,7 +142,7 @@
 
     function capture()
         {       
-               var scro=setInterval(scrolltoBottom,1000);
+                scrolltoBottom();
                 document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()' disabled>Capture</button>"
                 var sp=document.getElementById("span2");
                 sp.innerHTML="sending data to the server....";
@@ -193,7 +191,7 @@
                     $("#img").attr('height',height/1.5);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-                   setTimeout(() => {clearInterval(scro);},2000);
+                
               
                 }, error: function(){
                    
