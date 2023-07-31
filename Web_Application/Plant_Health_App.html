@@ -60,26 +60,23 @@
 
     </table>
     <div id="video"> </div> 
-    <div> <span id='cap'><Button type='button' onclick='capture()'>Capture</button></span> <br></div><span id='st'><button  type='button' onclick="stopCamera()">Stop</button></span> <span id='mode'><button type='button' onclick="sync()">Synchronous</button></span>
+    <div> <span id='cap'><Button type='button' onclick='capture()'>Capture</button></span> <br></div><span id='st'><button  type='button' onclick="stopCamera()">Stop</button></span> <span id='mode'><button type='button' onclick="sync()" disabled>Synchronous</button></span>
     <canvas id="c" hidden="hidden"> </canvas><br>
    <pre>
     <div id="container">
         <marquee scrollamount="70" id="bar" direction="right" ><span id='span1'>_________________</span></marquee> 
           <span id="span2"></span>
-          
     </div>
-   
    </pre>
     <div id="t"></div>
-    <div id='e'></div>
     
     </form>
 
    
     <script>
         
-        //const Domain = "https://028c-2409-4055-4e15-f326-915-3a51-1067-4c57.ngrok-free.app/php/Web_Application/";
-        const Domain = "https://192.168.218.26/php/Web_Application/";
+        const Domain = "https://c148-2409-4055-405-8c32-8dd9-9911-d5ad-fd7c.ngrok-free.app";
+        //const Domain = "https://192.168.218.26";
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) 
         { document.getElementById("video").innerHTML="<video height='1000' width='700'> </video>";}       
@@ -109,7 +106,11 @@
     });
     if(isMobile)
     
-    {document.getElementById("cameraList").innerHTML = "<option>"+camId[3]+"</option><br><option>"+camId[1]+"</option>";
+    {   for(let i = camId.length;i>0;i=i-2)
+        {
+            var x=document.getElementById("cameraList").innerHTML;
+        document.getElementById("cameraList").innerHTML = x+"<option>"+camId[i-1]+"</option><br>";
+        }
     }
      startCamera();
       
@@ -151,10 +152,10 @@
                 const dataURL = canvas.toDataURL("image/jpg");
                 var ch_int='';
                 var bar=0;
-                var j_url = Domain+'temp/info.json';
-                var s_url = Domain+'script.php';
+                var j_url = Domain+'/php/Web_Application/temp/info.json';
+                var s_url = Domain+'/php/Web_Application/script.php';
 
-                 $.post(s_url, {url2: 'C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json'}, function(){} );//for deleting info.json file
+                 $.post(s_url, {url2:'temp/info.json'}, function(){} );//for deleting info.json file
                  $.post(s_url, {url1: dataURL },myFunction);// saving image to the folder
                
                  
@@ -163,14 +164,15 @@
                    clearInterval(ch_int);
                     console.log("info.json not found");
                      $.ajax({
+                   headers: {"Access-Control-Allow-Origin":"https://akshat2512.github.io","ngrok-skip-browser-warning": "69420","Content-Type":"application/json"},
                    url: j_url,
                    dataType: "json",
-    
+                         
                    success: function(data) {
                 // Create a table element.
                    document.getElementById("bar").style.opacity='0%';
                    
-
+                   // $.post(s_url, {url2: 'C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json'}, function(){} );
                    var table = $("<table><tr><th><span>Image</span></th><th><span>Species</span></th><th><span>Disease</span></th><th><span>Confidence</span></th></tr>");
                    var row=$("<tr>");
                    $.each(data, function (index, value){ row.append("<td><span>"+value+"</span></td>"); });
@@ -184,7 +186,7 @@
               
                 }, error: function(){
                    
-                    ch_int=setInterval(myFunction, 1000);
+                    ch_int=setInterval(myFunction, 200);
 
                 }
              
