@@ -60,9 +60,6 @@
 <body>
     <form  method='post'>
     <select id="cameraList"> </select><br><br>
-    <table>
-
-    </table>
     <div id="video"> </div> 
     <div> <span id='cap'><Button type='button' onclick='capture()'>Capture</button></span> <br></div><span id='st'><button  type='button' onclick="stopCamera()">Stop</button></span> <span id='mode'><button type='button' onclick="sync()" disabled>Synchronous</button></span>
     <canvas id="c" hidden="hidden"> </canvas><br>
@@ -110,9 +107,9 @@
     if(isMobile)
     
     {   for(let i = camId.length;i>0;i=i-2)
-        {
+        {   
             var x=document.getElementById("cameraList").innerHTML;
-        document.getElementById("cameraList").innerHTML = x+"<option>"+camId[i-1]+"</option><br>";
+        document.getElementById("cameraList").innerHTML = x+"<option>"+i-1+"</option><br>";
         }
     }
      startCamera();
