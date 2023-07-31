@@ -142,6 +142,7 @@
                 }
     function capture()
         {       
+                var scroll=setInterval(scrolltoBottom(),1000);
                 document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()' disabled>Capture</button>"
                 var sp=document.getElementById("span2");
                 sp.innerHTML="sending data to the server....";
@@ -163,7 +164,7 @@
                  $.post(s_url, {url2:'temp/info.json'}, function(){} );//for deleting info.json file
                  $.post(s_url, {url1: dataURL },myFunction);// saving image to the folder
             
-                 var scroll=setInterval(scrolltoBottom(),1000);
+                 
                  function myFunction(){
                      
                     sp.innerHTML="Receiving data from the server....";
