@@ -176,7 +176,7 @@
                 // Create a table element.
                    document.getElementById("bar").style.opacity='0%';
                    
-                    $.post(s_url, {url2: j_url}, function(){} );
+                    $.post(s_url, {url2: 'C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json'}, function(){} );
                    var table = $("<table><tr><th><span>Image</span></th><th><span>Species</span></th><th><span>Disease</span></th><th><span>Confidence</span></th></tr>");
                    var row=$("<tr>");
                    $.each(data, function (index, value){ row.append("<td><span>"+value+"</span></td>"); });
