@@ -141,9 +141,10 @@
             console.log('10');
                 }
 
-        var scroll=setInterval(scrolltoBottom(),1000);
+
     function capture()
         {       
+               var scro=setInterval(scrolltoBottom,1000);
                 document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()' disabled>Capture</button>"
                 var sp=document.getElementById("span2");
                 sp.innerHTML="sending data to the server....";
@@ -190,7 +191,7 @@
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-                   clearInterval(scroll);
+                   clearInterval(scro);
               
                 }, error: function(){
                    
