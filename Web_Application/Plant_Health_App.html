@@ -191,7 +191,7 @@
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-                   clearInterval(scro);
+                   setTimeout(clearInterval(scro),1000);
               
                 }, error: function(){
                    
