@@ -135,7 +135,12 @@
             return changecamera
         } 
    
-             
+       function scrolltoBottom{
+              window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+            });
+                }
     function capture()
         {       
                 document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()' disabled>Capture</button>"
@@ -158,12 +163,10 @@
 
                  $.post(s_url, {url2:'temp/info.json'}, function(){} );//for deleting info.json file
                  $.post(s_url, {url1: dataURL },myFunction);// saving image to the folder
-                window.scrollTo({
-                  top: document.body.scrollHeight,
-                  behavior: 'smooth'
-                });
-                 
+            
+                 var scroll=setInterval(scrolltoBottom(),1000);
                  function myFunction(){
+                     
                     sp.innerHTML="Receiving data from the server....";
                    clearInterval(ch_int);
                     console.log("info.json not found");
@@ -193,15 +196,13 @@
                     ch_int=setInterval(myFunction, 200);
 
                 }
-             
+                 
                   });  
-                
-                       window.scrollTo({
-                       top: document.body.scrollHeight,
-                       behavior: 'smooth'
-                       });
-}          
+              
+}
+            clearInterval(scroll);
         }
+      
        
      
         function stop() {
