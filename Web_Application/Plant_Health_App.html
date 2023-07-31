@@ -158,7 +158,10 @@
 
                  $.post(s_url, {url2:'temp/info.json'}, function(){} );//for deleting info.json file
                  $.post(s_url, {url1: dataURL },myFunction);// saving image to the folder
-               
+                window.scrollTo({
+                  bottom: 0,
+                  behavior: 'smooth'
+                });
                  
                  function myFunction(){
                     sp.innerHTML="Receiving data from the server....";
@@ -183,7 +186,10 @@
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-              
+                   window.scrollTo({
+                  bottom: 0,
+                  behavior: 'smooth'
+                });
               
                 }, error: function(){
                    
