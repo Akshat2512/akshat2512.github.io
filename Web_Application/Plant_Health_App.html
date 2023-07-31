@@ -109,7 +109,11 @@
     });
     if(isMobile)
     
-    {document.getElementById("cameraList").innerHTML = "<option>"+camId[3]+"</option><br><option>"+camId[1]+"</option>";
+    {   for(let i = camId.length;i>0;i=i-2)
+        {
+            var x=document.getElementById("cameraList").innerHTML;
+        document.getElementById("cameraList").innerHTML = x+"<option>"+camId[i]+"</option><br>";
+        }
     }
      startCamera();
       
