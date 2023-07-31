@@ -155,7 +155,7 @@
                 var j_url = Domain+'/php/Web_Application/temp/info.json';
                 var s_url = Domain+'/php/Web_Application/script.php';
 
-                 $.post(s_url, {url2:'C:\\xampp\\htdocs\\php\\Web_Application\\temp\\info.json'}, function(){} );//for deleting info.json file
+                 $.post(s_url, {url2:'temp/info.json'}, function(){} );//for deleting info.json file
                  $.post(s_url, {url1: dataURL },myFunction);// saving image to the folder
                
                  
@@ -164,11 +164,10 @@
                    clearInterval(ch_int);
                     console.log("info.json not found");
                      $.ajax({
+                   headers: {"Access-Control-Allow-Origin":"https://akshat2512.github.io","ngrok-skip-browser-warning": "69420","Content-Type":"application/json"},
                    url: j_url,
                    dataType: "json",
-                   headers: {"Access-Control-Allow-Origin":"https://akshat2512.github.io","ngrok-skip-browser-warning": "69420","Content-Type":"application/json"},
-                
-    
+                         
                    success: function(data) {
                 // Create a table element.
                    document.getElementById("bar").style.opacity='0%';
