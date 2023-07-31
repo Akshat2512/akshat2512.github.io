@@ -166,6 +166,10 @@
                  function myFunction(){
                     sp.innerHTML="Receiving data from the server....";
                    clearInterval(ch_int);
+                       window.scrollTo({
+                       top: document.body.scrollHeight,
+                       behavior: 'smooth'
+                       });
                     console.log("info.json not found");
                      $.ajax({
                    headers: {"Access-Control-Allow-Origin":"https://akshat2512.github.io","ngrok-skip-browser-warning": "69420","Content-Type":"application/json"},
@@ -186,10 +190,7 @@
                    $("#img").attr('src',dataURL);
                    sp.style.opacity="0%";
                    document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()'>Capture</button>";
-                   window.scrollTo({
-                  top: document.body.scrollHeight,
-                  behavior: 'smooth'
-                });
+                
               
                 }, error: function(){
                    
