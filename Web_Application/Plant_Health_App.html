@@ -165,7 +165,7 @@
                      $.ajax({
                    url: j_url,
                    dataType: "json",
-                   headers: new Headers({"ngrok-skip-browser-warning": "69420"}),
+                   headers: {"Access-Control-Allow-Origin":"*","ngrok-skip-browser-warning": "69420","Content-Type":"application/json"},
                 
     
                    success: function(data) {
