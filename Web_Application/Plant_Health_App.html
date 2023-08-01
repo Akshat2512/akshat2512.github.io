@@ -74,8 +74,9 @@
    
     <script>
         
-       
-         
+    
+        var Domain = "";
+        fetch("../data.json"). then((response) => response.json()). then((data) => { Domain = data.Domain;}); 
        
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) 
@@ -140,9 +141,7 @@
 
 
     function capture()
-        {       
-                var Domain = "";
-                fetch("../data.json"). then((response) => response.json()). then((data) => { Domain = data.Domain;});
+        {      
                 scrolltoBottom();
                 document.getElementById('cap').innerHTML="<Button type='button' onclick='capture()' disabled>Capture</button>"
                 var sp=document.getElementById("span2");
