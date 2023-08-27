@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        table{
+            background-color: skyblue;
+            border: solid;
+        }
+        body{
+            background-color: Green;
+        }
+      </style>
+    </head>
+    <body>
+        <h1>Calendar</h1>
+
+        <h2>Select Year</h2>
+        <select id="year"></select>
+        
+        <h2>Select Month</h2>
+        <select id="month"></select> <button onclick="display()">Display</button>
+        <p id="demo2"></p>
+
+
+        <script>
+            const curryr=new Date().getFullYear();
+            let y=curryr; 
+            var m=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ] ;  
+            var w=["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            let j=0;   
+            var d;
+            while(y>=1900)
+            {
+                const option=document.createElement('option');
+                option.text=y;
+                y--;
+                document.getElementById("year").appendChild(option);
+            }
+            while(j<12)
+            {
+                const option=document.createElement('option');
+                option.text=m[j];
+                j++;
+                document.getElementById("month").appendChild(option);
+            }
+           function display()
+           {
+            var d=document.getElementById("month").value+" "+document.getElementById("year").value;
+    
+
+            let index=m.indexOf(document.getElementById("month").value);
+            var year=document.getElementById("year").value;
+            const first=new Date(year,index,1); // months start from 0
+            const daysinmonths=new Date(year, index+1, 0).getDate(); // months start from 1
+            let firstDay=first.getDay();
+         
+            
+            let table='<table border="1">';
+                table=table+"<tr><th colspan='7'>"+d+"</th></tr>";
+                table=table+'<tr>';
+                for(let i=0;i<7;i++)
+                {
+                    table=table+'<th>'+w[i]+'</th>';   
+                }
+                table+='</tr>';
+                var l="";
+                let flag=0;
+                for(let i=0;i<6;i++)
+                {
+                    table+='<tr>';
+                    for(let j=0;j<7;j++)
+                    {  
+                        if(j==firstDay && i==0)
+                        {
+                            l='1';
+                            table+='<th>'+l+'</th>';
+                            l=eval(l+"+"+1);
+                            firstDay=j;
+                            flag=1;
+                        }
+                       else
+                       { table+='<th>'+l+'</th>';
+                        if(flag==1)
+                        l=eval(l+"+"+1);
+                       }   
+                       if(l==daysinmonths+1)
+                        break;
+                    }
+                    table+='</tr>'
+                    if(l==daysinmonths+1)
+                        break;
+                    
+                }
+             table+='</table>';
+          
+            document.getElementById("demo2").innerHTML=table;
+           }
+        </script>
+    </body>
+</html>
