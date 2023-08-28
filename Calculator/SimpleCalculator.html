@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div{
+                font-size: 16px;
+                margin-left:-9px;
+                margin-right:-1px;
+                margin-top:3px
+            }
+            #div1{
+                border: 10px black solid;
+                margin-top:0px;
+                background-color:chocolate 
+            }
+            button{
+              padding: 30px;
+              font-size: 20px;
+              border-radius: 5px;
+            }
+            button:hover{
+                color:aqua;
+                background-color: rgb(197, 210, 215);
+                border: 0px;
+            }
+        </style>
+        <script>
+            function input(e)
+            {
+                var x=document.getElementById("mytext").value;
+                document.getElementById("mytext").value=x+e;
+            }
+            function clr()
+            {
+                document.getElementById("mytext").value="";
+            }
+            function calc()
+            {
+              var x=document.getElementById("mytext").value;
+              document.getElementById("mytext").value=eval(x);
+            }
+            function dlt()
+            {
+                var x=document.getElementById("mytext").value;
+                document.getElementById("mytext").value=x.slice(0,-1);
+            }
+            
+        </script>
+     
+    </head>
+    <body style="text-align: center; margin:30px">
+      
+        <div id="div1"><h1>Java Calculator</h1></div>
+        <div id="div1">
+        <input id="mytext" type="text"  size="31px" style="background-color: grey; font-size: large; margin: 10px;"/>
+      <center>
+        <table>
+            <tr>
+                <th><button onclick="input(this.value)" value="1">1</button></th>
+                <th><button onclick="input(this.value)" value="2">2</button></th>
+                <th><button onclick="input(this.value)" value="3">3</button></th>
+                <th><button onclick="input(this.value)" value="+">+</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="input(this.value)" value="4">4</button></th>
+                <th><button onclick="input(this.value)" value="5">5</button></th>
+                <th><button onclick="input(this.value)" value="6">6</button></th>
+                <th><button onclick="input(this.value)" value="-">-</button></th>
+            </tr>
+            <tr>          
+                <th><button onclick="input(this.value)" value="7">7</button></th>
+                <th><button onclick="input(this.value)" value="8">8</button></th>
+                <th><button onclick="input(this.value)" value="9">9</button></th>
+                <th><button onclick="input(this.value)" value="*">*</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="clr()"><div>CE</div></button></th>
+                <th><button onclick="input(this.value)" value="0">0</button></th>
+                <th><button onclick="input(this.value)" value=".">.</button></th>
+                <th><button onclick="input(this.value)" value="/">/</button></th>
+            </tr>
+            <tr>
+                <th><button onclick="input(this.value)" value="(">(</button></th>
+                <th><button onclick="input(this.value)" value=")">)</button></th>
+                <th><button onclick="dlt()"><div>del</div></button></th>
+                <th><button onclick="calc()">=</button></th>
+                
+            </tr>
+        </table></div>
+    </center>
+        
+    </body>
+</html>
