@@ -277,7 +277,7 @@ a:active {
    #cards {
     flex-direction: column;
     overflow-x:hidden;
-    width: 100px;
+    width: 110px;
     height: 50vh;
     border-top: 1px solid rgba(95, 95, 95, 0.569);
     border-bottom: 1px solid rgba(95, 95, 95, 0.569);;
