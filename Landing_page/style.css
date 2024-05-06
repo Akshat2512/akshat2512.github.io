@@ -241,9 +241,7 @@ a:active {
   color: rgba(105, 106, 104, 0.624);
 }
 
-/* Styles for Mobile Screen */
 @media (max-width: 767px) {
-  /* Your CSS for mobile screens goes here */
   .container{
     display:flex;
     justify-items: center;
@@ -253,7 +251,7 @@ a:active {
   }
   .container img{
     width: 40vh;
-    height: 50vh;
+    height: 55vh;
   }
 
   .content{
@@ -272,15 +270,22 @@ a:active {
     width:80%;
     
   }
+   .container img{
+    width: 50vh;
+    height: 80vh;
+  }
    #cards {
     flex-direction: column;
-    width: 11vh;
+    overflow-x:hidden;
+    width: 100px;
     height: 50vh;
     border-top: 1px solid rgba(95, 95, 95, 0.569);
     border-bottom: 1px solid rgba(95, 95, 95, 0.569);;
     
   }
+  
   .content{
     border-left: 1px solid rgba(95, 95, 95, 0.569);
+    height:100vh;
   }
 }
