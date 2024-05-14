@@ -139,6 +139,7 @@ fetch('https://cdn.shopify.com/s/files/1/0564/3685/0790/files/singleProduct.json
                   
                      var info = `Embrace Sideboard with Color ${color} and Size ${size} added to cart`;
                      show.innerHTML = info;
+                     show.style.opacity = '1';
                   }
                   else if(!color) {
                      
